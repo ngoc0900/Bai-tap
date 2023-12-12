@@ -1,0 +1,19 @@
+*{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.img{
+    background-size: 50px;
+}
+.veiw{
+    background-color: black;
+    color: azure;
+    padding: 10px 30px;
+    
+}
+.all{
+    background-color: black;
+    color: azure;
+    padding: 10px 30px;
+}
