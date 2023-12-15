@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+</head>
+<body>
+    <script>
+        let diemToan = parseFloat(prompt("Nhập điểm Toán"));
+        let diemVatly = parseFloat(prompt("Nhập điểm Vật lý"));
+        let diemHoahoc = parseFloat(prompt("Nhập điểm Hoá Học"));
+        var tongDiem = diemToan + diemVatly + diemHoahoc;
+        var diemTrungbinh = (diemToan + diemVatly + diemHoahoc) / 3 ;
+        document.write("Tổng Điểm:" + tongDiem +"<br>");
+        document.write("Điểm trung bình 3 môn:" + diemTrungbinh)
+
+    </script>
+</body>
+</html>
