@@ -26,13 +26,53 @@
 
         /*
         let a = 6;
-        ++a 7
-        a 6
-        a++ 8
-        ++a 9
-        a 6
         let result= ++a + a + a++ + ++a + a;
-        kết quả là : 7+6+8+9+6=36  */
+        kết quả là : 7+7+7+9+9=39 
+
+
+        bài 9
+        console.log(0 || NaN ||"Rikkei Academy"||null);
+        kết quả là Rikkei Academy
+
+        console.log(null || NaN || false || null);
+        kết quả là null
+
+        console.log(undefined || 1 || 5 || null);
+        kết quả là 1
+
+        console.log("" || null || 5 || NaN);
+        kết quả là  5
+
+        console.log(1 || null || 12|| NaN);
+        kết quả là  1
+
+        * toán tử || đọc từ trái sang phải 
+        nếu nó giá trị bên trong không thuộc 6 kí tự này( 0 , "",null, undefined,NaN,false)
+        thì nó sẽ tự động lấy luôn giá trị ban đầu .
+        còn nếu giá trị ban đầu là 1 trong 6 kí tự đặc biệt bên trên thì nó trực tiếp qua rồi xét đến giá trị tiếp theo.
+
+         bài 10
+         console.log(0 && 1 && "Rikkei Academy" &&null);
+         kết quả là Rikkei Academy
+
+        console.log(2 && NaN && false && null);
+        kết quả là NaN
+
+        console.log(3 && 1 && 5 && null);
+        kết quả là null
+
+        console.log("1" && undefined && 5 && NaN);
+        kết quả là undefined
+
+        console.log(1 && null && 12&& NaN);
+        kết quả là null
+
+        *toán tử && đọc từ trái sang phải 
+        nó sẽ lấy giá trị cuối cùng 
+        nếu gặp trường hợp trong 6 kí tự đặc biệt trên( 0 , "",null, undefined,NaN,false) nó sẽ tự động dừng lại tại kí tự đó.
+
+        */
+
         
 
     </script>

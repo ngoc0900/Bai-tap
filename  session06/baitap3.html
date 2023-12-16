@@ -10,8 +10,8 @@
 
 <body>
     <script>
-        let chieuDai = + prompt("Hãy nhập chiều dài");
-        let chieuRong = + prompt("Hãy nhập chiều rộng");
+        let chieuDai = parseFloat( prompt("Hãy nhập chiều dài"));
+        let chieuRong = parseFloat(prompt("Hãy nhập chiều rộng"));
         var chuVi = (chieuDai + chieuRong) * 2;
         var dienTich = chieuDai * chieuRong;
         document.write("Chu vi hình chữ nhật là: " + chuVi + "<br>");
