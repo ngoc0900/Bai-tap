@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8</title>
+</head>
+
+<body>
+    <script>
+        let weight = parseFloat(prompt(" Mời nhập cân nặng (kg)"));
+        let height = parseFloat(prompt(" Mời nhập chiều cao(m)"));
+        let bmi = weight / (height * height) ;
+        document.write("Đây là chỉ số sau khi tính",[bmi])
+
+
+        if (bmi < 18.5) {
+            console.log("Cân nặng thấp( gầy)");
+        } else if (bmi <= 24.9) {
+            console.log("Bình thường");
+        } else if (bmi <= 25) {
+            console.log("Thừa cân");
+        } else if (bmi <= 29,9) {
+            console.log("Tiền béo phì");
+        } else if (bmi <= 34,9) {
+            console.log(" Béo phì dộ 1");
+        } else if (bmi <= 39,9) {
+            console.log(" Béo phì độ 2");
+        } else {
+            console.log("Béo phì độ 3");
+        }
+
+
+    </script>
+</body>
+
+</html>
