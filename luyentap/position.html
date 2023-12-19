@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .img {
+            background-image: url(../image/picsum.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 1000px;
+            position: relative;
+            z-index: -10;
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+
+        }
+
+        ul {
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 5px;
+
+        }
+
+        nav {
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+
+        }
+
+        .con {
+            position: absolute;
+            bottom: 30px;
+            text-align: center;
+            width: 100%;
+            color: white;
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <ul>
+                <li>HOME</li>
+                <li>BAND</li>
+                <li>TOUR</li>
+                <li>CONTACT</li>
+                <li>MORE</li>
+
+            </ul>
+            <span class="material-symbols-outlined">
+                search
+            </span>
+        </nav>
+        <div class="img">
+            <div class="con">
+                <h3>Chicago</h3>
+                <p>Thank you Chicago - A night we won't forget</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
