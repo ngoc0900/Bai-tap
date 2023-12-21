@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(1 < 2 < 3); /* true <3 ==> true*/
+        console.log(3 > 2 > 1); /*true > 1 ==> false*/
+        // khi so sánh true là 1 và false là 0
+        console.log(1 || 2 || 3);
+        /*
+        1.falsy
+        goomf: NaN,"",'',0,undefined, flase,null
+        2.truthy
+        - không phải là falsy
+        +Đối với dạng có dấu || thì sẽ lấy trythy đầu tiên,
+         nếu không có truthy nào thì lấy cuối cùng
+         +Đối với dạng $$ thì sẽ lấy falsy đầu tiên,
+         nếu không có falsy thì lấy cuối cùng
+         -parseInt: nó dùng dể ép một chuỗi sang dạng số nguyên
+        */
+       let name= "hong";
+       console.log("bạn " +name+ " rất chăm chỉ")
+    //     cách 2 
+            console.log(`Bạn ${name} rất chăm chỉ`)
+            /* 
+            ép kiểu từ string sang number
+            - để dấu+ phía trước
+            - number(prompt("mời bạn nhập tuổi !")
+            NaN không so sánh với kì cái nào kể cả chính nó
+            */
+    </script>
+</body>
+
+</html>

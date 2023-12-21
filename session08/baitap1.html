@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài tập 1</title>
 </head>
+
 <body>
     <script>
-        
-        let a = prompt("Nhập số tuổi của bạn");
-        
 
-        if (a >= 18) {
-            alert("Trên 18 tuổi");
-
-        } else {
-            alert("Chưa đủ 18 tuổi");
-            
+        let number = parseInt(prompt("Nhập một số nguyên dương bất kì"));
+        let integerResult = 1;
+        for (let i = 1; i <= number; i++) {
+            integerResult *= i;
         }
+        document.write(`Giai thừa của số nguyên dương đó là ${integerResult}`);
+
     </script>
 </body>
+
 </html>
