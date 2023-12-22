@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <!-- 
+        Bài 5: Cho 1 một mảng  let  numbers=[1,5,8,7,9,6,5,41,2,6,55,4,8];
+Sắp xếp các phần tử trong mảng theo thứ tự tăng dần.
+
+
+        Cú pháp hàm sắp xếp mảng trong JavaScript
+Hàm sắp xếp mảng trong JavaScript là sort():
+- Mặc định hàm sort() sẽ so sánh theo kiểu string để sắp xếp.
+- Hàm compareFunction dùng để xác định thứ tự sắp xếp mảng.
+
+Giả sử, a và b là hai phần tử dùng để so sánh:
+
+Nếu hàm compareFunction(a, b) trả về giá trị nhỏ hơn 0 thì a sẽ đứng trước b.
+Nếu hàm compareFunction(a, b) trả về giá trị lớn hơn 0 thì a sẽ đứng sau b.
+Nếu hàm compareFunction(a, b) trả về giá trị bằng 0 thì giữ nguyên thứ tự a, b.
+  
+==> cách làm: Khi a nhỏ hơn b thì a - b < 0 là true.
+ Theo đúng mô tả của hàm compareFunction thì suy ra a sẽ đứng trước b.
+     -->
+    <script>
+
+        let numbers = [1, 5, 8, 7, 9, 6, 5, 41, 2, 6, 55, 4, 8];
+        document.write(numbers + "<br>");
+        numbers.sort(function (a, b) {
+            return a - b
+        });
+        document.write(numbers);
+        console.log(numbers);
+    </script>
+</body>
+
+</html>

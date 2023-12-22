@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    bài 6: kiểm tra số hoàn hảo
+    số hoàn hảo là số có tổng các ước nhỏ hơn nó bằng 
+    chính nó
+    vd 6  có các ước nhỏ hơn nó : 1 2 3  -> 1+2+3=6
+    -khi ng dùng nhập vào 1 số thì phải đi tìm các 
+    ước trc
+    -sau khi có các ước nhỏ hơn nó thì cộng các ước lại
+
+ -->
+ <script>
+    // for (let i = 1;i <6; i++){
+    //     if(6%i==0){
+    //         console.log(i);
+    //     }
+    // }
+    let number = + prompt("moi nhap so can kiem tra")
+    let sum = 0;
+    for (let i =1; i < number; i++){
+        if(number%i==0){
+            //in ra các ước số
+            console.log(i);
+            // cộng tổng các ước số lại
+            sum=sum+i
+        }
+    }
+    //kết thúc for đi so sánh xem tổng các ước có bằng chính nó hay không?
+    if(sum==number){
+        // dùng dấu `` để truyền biến vào trong chuỗi
+        console.log(`${number} la so hoan hao`);
+        
+    } else{
+        console.log(`${number} khong la so hoan hao`);
+    }
+ </script>
+</body>
+</html>

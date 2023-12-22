@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 4</title>
+</head>
+
+<body>
+    <!-- Bài 4: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.Các kí tự hoa chuyển thành chữ thường.
+Ví dụ: nếu bạn nhập vào chuỗi 'Keep Calm And Code On' kết quả của chương trình là 'kEEP cALM aND cODE oN'.
+ -->
+    <script>
+        let a = prompt("Nhập một chuỗi các chữ thường hoặc in hoa tuỳ thích.");
+        let result = "";
+        for (let i = 0; i < a.length; i++) {
+            let ra = a[i]
+            if (ra == ra.toLowerCase()) {
+                result += ra.toUpperCase();
+                // result = result + ra.toUpperCase();
+            } else {
+                result += ra.toLowerCase();
+            }
+        }
+        console.log(result);
+        document.write(result);
+
+    </script>
+</body>
+
+</html>
