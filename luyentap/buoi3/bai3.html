@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let a = + prompt("nhap vao mot so bat ki");
+        // if (a < 2) {
+        //     console.log("khong la so ng to");
+        // }
+        // for (let i = 2; i < a - 1; i++) {
+        //     if (a % i == 0) {
+        //         console.log("khong laf so ng to");
+        //         break;
+        //     }
+        //     console.log("la so nguyen to");
+        // }
+        let array = [3, 7, 2, 10, 5];
+        let tong = 0;
+        function checkSont(so) {
+
+            if (so < 2) {
+                return false;
+            }
+            for (let i = 2; i < so - 1; i++) {
+                if (so % i == 0) {
+                    return false;
+                }
+            } return true
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (checkSont(array[i])){
+                tong += array[i]
+            }
+        }
+        console.log(tong);
+
+    </script>
+</body>
+
+</html>

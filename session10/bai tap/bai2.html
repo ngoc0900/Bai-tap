@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2</title>
+</head>
+
+<body>
+    <script>
+        let number = + prompt("Người dùng nhập vào một số");
+        function checkSont(number) {
+            if (number < 2) {
+                return false;
+            }
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        checkSont(number);
+        if (checkSont(number)) {
+            console.log("là số nguyên tố");
+        } else {
+            console.log("không là số nguyên tố");
+        }
+    </script>
+</body>
+
+</html>

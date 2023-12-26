@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       function: Hàm : là 1 chương trình con bên trng tập hợp nhiều câu lệnh
+       thực hiện 1 tác vụ cụ thể.
+       có thể tái sử dụng và bảo trì tốt hơn, nâng cao hiệu quả công việc
+       2. các cách khai báo hàm
+            1. declaration :
+            function sayHello(){
+                //thân hàm
+                chứa các logic
+            }
+            -tên hàm đặt theo quy tắc camel- case, thường là hành động
+            - có thể gọi hàm trc khi khai báo hay sau khi khai báo đều đc
+            2. expression
+            3. arrow
+            4.IIFE( hàm thường dùng để làm thư viện)
+        3. Tham số, đối số trong hàm
+            - Đối số (argument)  : khi gọi hàm truyền giá trị cho nó 
+            -Tham số (params)  : giá trị hàm gọi về.
+        4. return trong hàm
+            -return chỉ dùng trong hàm
+            - hàm gặp return thì sẽ dừng chương trình
+            - return là kết quả trả về của hàm.
+
+     -->    
+     <script>
+        // mới khai báo thôi chưa có gọi hàm
+        // để hàm đc thực thi thì mik phải gọi hàm
+        function sayHello(a,b) {
+            console.log("xin chao",a,b);
+        }
+        // gọi hàm để hàm đc chạy
+        sayHello("hoa","lan");
+        sayHello("ánh","hùng");
+        function tinhTong(a,b) {
+            let tong = 0;
+            for (let i = a; i < b; i++){
+                tong += i;
+            }
+            console.log(`tong cacs so tu ${a} den ${b} la ${tong}`);
+        }
+        tinhTong(1,5);
+        tinhTong(1,7);
+        function test(a,b,c) {
+            
+            let max = a;
+            if ( a>b && a>c) {
+                max = a
+            }else if (b>max && b>c) {
+                max = b
+            }else {
+                max = c
+            }
+            return max
+        }
+        console.log(test(3,5,6))
+     </script>
+</body>
+</html>
