@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+</head>
+
+<body>
+    <script>
+        // bài 1 cho ng dùng nhập tên đầy đủ 1 ng 
+        // in ra kí tự đầu tiên viết hoa
+        //     input :vũ hồng vân
+        //     output: Vũ Hồng Vân
+
+        let name = prompt("Nhập đầy đủ họ tên");
+        function doiTen(newname) {
+            let kq = name.toLowerCase().split(" ");
+            let result = [];
+            for (i = 0; i < kq.length; i++) {
+                result.push(kq[i][0].toUpperCase() + kq[i].slice(1));
+            }
+            return result.join(" ");
+        }
+        console.log(doiTen(name));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2</title>
+</head>
+
+<body>
+    <script>
+        // bài 2 : cho ng dùng nhập đầy đủ tên một ng
+        //     nếu găph chũ hoa tin xuống chữ thường 
+        //     nếu gặp chữ thừng in lên chữ hoa
+        //     input : vŨ HỒng VâN
+        //     outpout: Vũ hồNG vÂn
+
+        let a = prompt("Nhập đầy đủ họ tên");
+        function doiChu(hoten) {
+            let result = "";
+            for (let i = 0; i < a.length; i++) {
+                let ra = a[i]
+                if (ra == ra.toLowerCase()) {
+                    result += ra.toUpperCase();
+                    // result = result + ra.toUpperCase();
+                } else {
+                    result += ra.toLowerCase();
+                }
+            } return result;
+        }
+        console.log(doiChu(a));
+    </script>
+</body>
+
+</html>

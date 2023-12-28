@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let chuoi = "Hello World"
+        // let arr = chuoi.split("");
+        // for (let i = 0; i < arr.length; i++){
+        //     let count = 0;
+        //     for (let j = 0; j < arr.length; j++){
+        //         if (arr[i] == arr[j]){
+        //             count ++
+        //         }
+        //     }
+        //     console.log(`kí tự ${arr} xuất hiện ${count} lần`);
+        // }
+
+
+        let a = prompt('moi ban nhap');
+        let arr1 = a.split("");
+        let arr2 = Array.from(new Set(arr1))
+        for (let i = 0; i < arr2.length; i++){
+            let count = 1;
+            for (let j = 0; j < arr1.length; j++){
+                if (arr1[i] == arr2[j]){
+                    count ++
+                }
+            }
+            console.log(`kí tự ${arr2} xuất hiện ${count} lần`);
+        }
+    </script>
+</body>
+</html>
