@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="text">
+    <button onclick="addToCart()">mua</button>
+    <button onclick="payCart()">thanh toán</button>
+    <!-- 
+        danh sách các sản phẩm trong giỏ hàng
+        let products = [
+        {
+            id: 115,
+            name: "banhmi1",
+            price: 5000,
+        }
+        {
+            id: 116,
+            name: "banhmi2",
+            price: 6000,
+        }
+        {
+            id: 117,
+            name: "banhmi3",
+            price: 7000,
+        }
+        {
+            id: 118,
+            name: "banhmi4",
+            price: 8000,
+        }
+        ]
+        let cart =[];
+        1:cho ng dùng nhập tên sản phẩm muốn mua
+        2. nếu có cho đi mua ,nếu không có báo cáo không có hàng rồi return
+        3.kiểm tra xem trong cart có sản phẩm đó chưa có thì tăng số lượng
+        không có thì push vào bình thường
+        4.tính bill của người đi mua hàng
+        cart:[
+             {
+                id:115,
+                name:"banhmi1",
+                price:5000,
+                quantity:1
+             },
+              {
+                id:116,
+                name:"banhmi2",
+                price:6000,
+                quantity:5
+             }
+        ]
+     -->
+     <script>
+        let products = [
+        {
+            id: 115,
+            name: "banhmi1",
+            price: 5000,
+        },
+        {
+            id: 116,
+            name: "banhmi2",
+            price: 6000,
+        },
+        {
+            id: 117,
+            name: "banhmi3",
+            price: 7000,
+        },
+        {
+            id: 118,
+            name: "banhmi4",
+            price: 8000,
+        }
+        ]
+        let cart =[];
+        
+        //function đi mua hàng
+        function addToCart() {
+            // console.log("đi mua hàng thôi");
+            let inputValue = document.getElementById("text").value;
+            console.log(inputValue);
+            let check = -1;
+            for (let i = 0; i < products.length; i++) {
+                if(inputValue == products[i].name) {
+                    check = i;
+                    break;
+                }
+            }
+            if (check == -1) {
+                console.log("sản phẩm không tông tại");
+                return;
+            }
+            let flag = -1;
+            for (let j = 0; j < cart.length; j++) {
+                if (cart[j].name == inputValue) {
+                    flag = j;
+                    break;
+                } else {
+                    flag = -1;
+                }
+            }
+            if (flag =- -1) {
+                cart.push({...products[check],quantity:1});
+            }else // trong cart đã có sp rồi
+                cart[flag].quantity = ++cart[flag].quantity
+            console.log(cart);
+        }
+
+        
+         function payCart() {
+                console.log("đi thanh toán");
+                let result = cart.reduce(function(a,b) {
+                    return a + b.price * b.quantity
+                },0)
+                console.log(result);
+            }
+            
+     </script>
+</body>
+</html>

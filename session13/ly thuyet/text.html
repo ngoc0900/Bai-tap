@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        TEXT: nội dung
+        1: innerText
+        2:textContent
+        3: inner HTML
+     -->
+    <p>DOM</p>
+    <button onclick="changeText()">change Text</button> 
+    <script>
+        function changeText() {
+            // lấy element h1
+            let element = document.getElementsByTagName("p");
+            element[0].innerText ="<h1>dom basic </h1>";
+        }
+    </script>
+
+</body>
+</html>

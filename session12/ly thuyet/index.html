@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        object : đối tượng
+        1: cách khai báo
+        có 4 cách 
+        + cách 1: khai báo bằng từ khoá let, const, var.
+        bao gômg các cặp key(thuộc tính-property) và value, các cặp này ngăn cách với nhau bởi dấu phẩy
+        + cách 2: khai báo bằng new Object (ít dùng)
+        + cách 3: khai báo bằng cách dùng tạo hàm constructor
+        + cách 4: dùng class (ES6 thầy dạy)
+        ********************
+        Thao tác với object 
+        CRUD
+        1.C create thêm
+        - khi mốn thêm thuộc tính cho đối tượng thì cần lấy đối tượng.thuộc tính
+        2.R read : dùng for - in để đọc ra
+        3.U update : đối tượng. thuộc tính => update thay thế mới
+        4.D delete: (đi xoá thuộc tính) dùng delete( dấu cách)đối tượng. thuộc tính
+     -->
+     <script>
+         let student={
+            name:"vân",
+            age:20,
+            address:"HN"
+        };
+        console.log(student);
+        delete student.age
+        // student.name="nhung";
+        // console.log(student.name);
+        // student.name="vân";
+        // student.age=20;
+        for (const key_name in student) {
+            console.log("key_name",student.key_name);
+        }
+        console.log(student);
+
+        // let student = {
+        //     name: "hoa",
+        //     age: 25,
+        // }
+        // console.log("student", student);
+
+        // let student = new Object({name: " hoa"})
+
+
+        // function Student(name,age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let student1 = new Student("hoa",20);
+        // let student2 = new Student("hong",26);
+        // let student3 = new Student("nhung",27);
+        // console.log("student",student1);
+
+        // let studens = {};
+        // studens.name = "van";
+        // studens.age = 20;
+        // console.log(studens);
+
+
+        // let student = {
+        //     name: "van",
+        //     age: 20,
+        //     address: "HN"
+        // }
+        // console.log(student);
+        // delete student.age;
+
+
+
+        let product = {
+            id: 1,
+            name: "sach",
+            price: 20,
+            stock: 5,
+            image: "anh",
+            description: "cuộc sống",
+
+        }
+
+
+
+     </script>
+</body>
+</html>

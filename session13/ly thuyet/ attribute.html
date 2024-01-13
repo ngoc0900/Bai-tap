@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #title{
+            color: red;
+        }
+        /* .heading{ */
+            /* background-color: tomato; */
+           
+        /* } */
+        .toggle{
+            background-color: red;
+        }
+        .attribute{
+            color: red;
+        }
+    </style>
+<body>
+    <h1>attiribute</h1>
+    <p class="">bật tắt toggle</p>
+    <img width="200px" height="100px" src="https://vcdn1-vnexpress.vnecdn.net/2021/10/09/kho0-1633783611-4331-1633783727.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=4wSwj5d32qTc69CGD_UkTg" alt="">
+    <button onclick="changeaAttributr()">bấm</button>
+    <!-- 
+        classList : đây là 1 thuộc tính của element.
+        ==> Nó sẽ lấy ra hết danh sách class của element.
+        --Trong classList sẽ cung cấp các phương thức
+        1.add(): thêm tên class vào
+        2.remove(): xoá tên class
+        3.toggle(): giống như 1 công tắc có thì xoá đi và không có thì thêm vào
+        4.contain(): kiểm tra xem element có class đấy không.trả về true/false
+        setAttribute : thêm thuộc tính
+     -->
+    <script>
+        function changeaAttributr() {
+            let element = document.getElementsByTagName("h1");
+            element[0].id= "title"
+            let img = document.getElementsByTagName("img");
+            img[0].src ="../../../image/anh.jpeg";
+            let classlist1 = element[0].classList.add("heading");
+            element[0].classList.remove("title1");
+            let elm= document.getElementsByTagName("p");
+            elm[0].classList.toggle("toggle");
+            let elementAttribute= document.getElementsByTagName("p");
+            elementAttribute[1].setAttribute("class","attribute")
+        }
+
+        
+    </script>
+
+</body>
+</html>

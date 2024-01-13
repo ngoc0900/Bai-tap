@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var library = [ 
+    {
+        title: 'Bill Gates',
+        author: 'The Road Ahead',
+        readingStatus: true
+    },
+    {
+        title: 'Steve Jobs',
+        author: 'Walter Isaacson',
+        readingStatus: true
+    },
+    {
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        author: 'Suzanne Collins',
+        readingStatus: false
+    }];
+    // Viết chương trình JavaScript để hiển thị trạng thái đọc 
+    // (tức là hiển thị tên sách, tên tác giả và trạng thái đọc) của những cuốn sách. 
+    // Nếu readingStatus = false sẽ hiển thị là “Chưa được đọc”, Nếu = true sẽ hiển thị “Sách này đã đọc rồi!”
+
+
+    for(var readingStatus in library) {
+        if (readingStatus == false){ 
+            console.log(`${library} chua doc`);
+        } else { 
+            console.log(`${library} da doc`);
+        }
+    }
+
+
+    // for (var i = 0; i < library.length; i++) 
+	//    {
+	// 	var book = "'" + library[i].title + "'" + ' by ' + library[i].author + ".";
+	// 	if (library[i].readingStatus) {
+	// 	  console.log("Already read " + book);
+	// 	} else
+	// 	{
+	// 	 console.log("You still need to read " + book);
+	// 	}
+	//    }
+        
+    </script>
+</body>
+</html>

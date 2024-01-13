@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 1</title>
+</head>
+<body id ="body">
+    <h1>This is a Text. This is a Text.This is a Text</h1>
+    <button class="head" onclick="change1()">Hide text</button>
+    <button class="head" onclick="change2()">Show text</button>
+    <script>
+        function change1() {
+           let ra = document.getElementsByTagName("h1"); 
+           console.log(ra);
+            let thaydoi = ra[0].style.opacity = "0"
+            // let thaydoi = ra[0].style.display = "none";
+
+        }
+        function change2() {
+           let hi = document.getElementsByTagName("h1"); 
+            let thaydoi2 = hi[0].style.opacity ="1"
+        // cách tạo element
+        //  let element = document.createElement("h1");
+        //  element.innerHTML = "This is a Text. This is a Text.This is a Text";
+        //  document.getElementById("body").appendChild(element);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = [
+            { id: 1, name: 'Alice', scores: [85, 90, 78] },
+            { id: 2, name: 'Bob', scores: [90, 88, 76] },
+            { id: 3, name: 'Charlie', scores: [78, 95, 89] },   
+            { id: 4, name: 'David', scores: [95, 92, 87] },
+        ];
+        // 1.Tính tổng điểm của từng sinh viên.
+        
+        var total = students.reduce(function(a,b){
+            return a + b.scores
+        },0)
+        console.log(total);
+
+    </script>
+</body>
+
+</html>

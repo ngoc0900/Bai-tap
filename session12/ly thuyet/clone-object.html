@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        khi thay đổi obj1 nhưng obj2 vẫn gữ nguyên không thay đổi theo obj1
+        Clone object
+        1.dùng toán tử spread
+        2. dùng toán tử object.asign
+        3. dùng JSON.stringify
+     -->
+     <script>
+        let obj1 = {
+            name: "hoa"
+        }
+        let obj2 ={...obj1};// cách 1
+        // let obj2 = Object.assign({},obj1);// cách 2
+        // let obj2 = JSON.parse(JSON.stringify(obj1)) // cách 3
+        obj1.name = "nhung"
+        console.log(obj2);
+
+
+
+        let c = {
+            name: "hoa"
+        }
+        let d = {
+            name: "hoa"
+        }
+        console.log(c==d); //fales
+        console.log(c.name === d.name); //true
+     </script>
+</body>
+</html>

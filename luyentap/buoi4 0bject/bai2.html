@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const books = [
+            { id: 1, title: 'JavaScript: The Good Parts', author: 'Douglas Crockford', price: 25 },
+            { id: 2, title: 'Eloquent JavaScript', author: 'Marijn Haverbeke', price: 30 },
+            { id: 3, title: 'You Don\'t Know JS', author: 'Kyle Simpson', price: 20 },
+            { id: 4, title: 'Effective JavaScript', author: 'David Herman', price: 35 },
+        ];
+        // 1. Lọc ra những cuốn sách có giá lớn hơn hoặc bằng 30. (filter)
+        let loc = books.filter(function (a, b) {
+            return a.price >= 30;
+        });
+        console.log(loc);
+        // 2. Tạo một danh sách mới chứa tên của những cuốn sách đã được lọc. (map)
+        let danhSach = loc.map(function (ten, index) {
+            return { title: ten.title }
+        });
+        console.log(danhSach);
+        // 3. Sắp xếp danh sách theo tên sách (theo thứ tự bảng chữ cái).
+        books.sort(function (a, b) {
+            if (a.title.toLowerCase() < b.title.toLowerCase()) { return -1; }
+            if (a.title.toLowerCase() > b.title.toLowerCase()) { return 1; }
+            return 0;
+
+        });
+        console.log(books);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

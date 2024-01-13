@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        tham chiếu tham trị trong javascrip
+        -đối với kiểu dữ liệu đơn giản( nguyên thuỷ là kiểu dữ liệu tham trị)
+        đi sao chép giá trị gắn cho thằng khác còn ở 2 địa chỉ ô nhớ khác nhau
+
+        -đối với kiểu dữ kiệu phức tạp(tham chiếu)
+        đi gán lại địa chỉ cho ô nhớ
+
+     -->
+     <script>
+        let a =5;
+        let b = a;
+        a = 15;
+        console.log(b);
+
+        let obj1 = {
+            name: "hoa"
+        }
+        let obj2 = boj1;
+        obj1.name = "nhung"
+        console.log(obj2);
+     </script>
+</body>
+</html>
