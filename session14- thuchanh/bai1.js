@@ -4,7 +4,7 @@ function isValidEmail(email) {
 function isPhone(sđt) {
     return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(sđt);
 }
-
+let stt = 1;
 function luu() {
     let fullname = document.getElementById("fullname").value;
     let email = document.getElementById("email").value;
@@ -64,17 +64,19 @@ function luu() {
     if (fullname && email && sđt && address && gender) {
         let students = [];
         students.push({
+            id: stt,
             fullname: fullname,
             email: email,
             sđt: sđt,
             address: address,
             gender: gender,
         });
-        let trstt = document.getElementsByClassName("stt");
-        let stt = 1;
-        for (let i = 0; i < trstt.length; i++) {
-            stt = i + 2;
-        }
+        stt ++ ;
+        // let trstt = document.getElementsByClassName("stt");
+       
+        // for (let i = 0; i < trstt.length; i++) {
+        //     stt = i + 2;
+        // }
         for (let i = 0; i < students.length; i++) {
             document.getElementById("idlist").innerHTML +=
             `<table id="idlist" class="listhv" >
@@ -86,10 +88,11 @@ function luu() {
                     <td>${address}</td>
                     <td>${gender}</td>
                     <td> 
-                        <a href="#" >Edit</a>|<a href="#" class="dlt" onclick= "deleteStudent(${stt})">Delete</a> 
+                        <a href="#" >Edit</a>|<a href="#" class="dlt" onclick= "deleteStudent(${stt })">Delete</a> 
                     </td>
                 </tr>
             </table>`
+            
         }
     }
 }
@@ -101,7 +104,7 @@ function deleteStudent(stt) {
   let id = document.getElementsByClassName("dlt");
   for ( let i = 0; i < newSTT.length ; i++) {
     newSTT[i].innerHTML = i + 1;
-    // id.onlcick = `deleteStudent(${i+1})`
-    // id[i].addEventListener("click", deleteStudent(i)) ;
+//     // id.onlcick = `deleteStudent(${i+1})`
+//     // id[i].addEventListener("click", deleteStudent(i)) ;
   }
 }
