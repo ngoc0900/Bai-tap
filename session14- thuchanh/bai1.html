@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập thực hành </title>
+    <style>
+        
+        .head {
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+        }
+        table tr td {
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        .button {
+            padding: 10px 10px;
+            width: 120px;
+           
+        }
+    </style>
+</head>
+<body>
+    <form class="form" action="" >
+        <table >
+            <tr>
+                <td class="head" colspan="2">Thông tin học viên</td>
+            </tr>
+            <tr>
+                <td><label for="fullname">Họ và tên</label></td>
+                <td><input id="fullname" type="text" placeholder="vui lòng nhập tên"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input id="email" type="text" placeholder="vui lòng nhập email"></td>
+            </tr>
+            <tr>
+                <td><label for="sđt">Số điện thoại</label></td>
+                <td><input id="sđt" type="text" placeholder="vui lòng nhập số điện thoại"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Quê quán</label></td>
+                <td><input id="address" type="text" placeholder="vui lòng nhập địa chỉ quê quán"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Giới tính</label></td>
+                <td>
+                    <input id="male" type="radio" name="gender" value="Male">
+                    <label for="male">Nam</label>
+                    <input id="female" type="radio" name="gender" value="Female">
+                    <label for="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="button" onclick="luu()">Lưu lại</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+   
+    <script>
+        let students = [];
+    </script>
+</body>
+</html>

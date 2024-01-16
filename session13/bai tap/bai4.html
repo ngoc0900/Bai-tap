@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+body{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+        .container{
+            margin-top: 10%;
+            width: 100%;
+            max-width: 740px;
+            height: 540px;
+            background-color: black;
+            display: flex;
+            align-items: end;
+            position: relative;
+        }
+        li img{
+            width: 120px;
+            height: 100px;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            margin: 10px;
+            list-style: none;
+        }
+        .item{
+            margin-bottom: 20px;
+            margin-left: 20px;
+            /* overflow: hidden; */
+            width: 700px;
+        }
+        #img img{
+            position: absolute;
+            top: 5%;
+            left: 29px;
+            width: 92%;
+            height: 65%;
+        }
+        #btback{
+            position: absolute;
+            bottom: 70px;
+            left: 10px;
+
+        }
+        #btnext{
+            position: absolute;
+            right: 10px; 
+            bottom: 70px;
+        }
+        .listNew{
+            opacity: 0.5;  filter: alpha(opacity=50);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="img"><img id="imgMain" src="../img14/anh-kimetsu-no-yaiba-6.jpg" alt=""></div>
+        <div class="item">
+            <ul id="ul">
+                <!-- <li><img src="../img14/anh-kimetsu-no-yaiba-6.jpg" alt=""></li>
+                <li><img src="../img14/anh-kimetsu-no-yaiba-7.jpg" alt=""></li>
+                <li><img src="../img14/anh-kimetsu-no-yaiba-8.jpg" alt=""></li>
+                <li><img src="../img14/anh-kimetsu-no-yaiba-10.jpg" alt=""></li>
+                <li><img src="../img14/anh-kimetsu-no-yaiba-15.jpg" alt=""></li> -->
+                <!-- <li><img src="../img14/anh-kimetsu-no-yaiba-16.jpg" alt=""></li>
+                <li><img src="../img14/anh-kimetsu-no-yaiba-17.jpg" alt=""></li> -->
+            </ul>
+            <div onclick="backImg()" id="btback" style="color: antiquewhite;">❮</div>
+            <div onclick="nextImg()" id="btnext" style="color: antiquewhite;" >❯</div>
+        </div>
+    </div>
+    <script>
+        let listimg = ['../img14/anh-kimetsu-no-yaiba-6.jpg','../img14/anh-kimetsu-no-yaiba-7.jpg','../img14/anh-kimetsu-no-yaiba-8.jpg',
+        '../img14/anh-kimetsu-no-yaiba-10.jpg','../img14/anh-kimetsu-no-yaiba-15.jpg','../img14/anh-kimetsu-no-yaiba-16.jpg','../img14/anh-kimetsu-no-yaiba-17.jpg',] 
+            //tạo 1 list ảnh
+            function renderImages() {
+                let element = ''
+                for (let i = 0; i < 5; i++) {
+                    element+=`<li><img class="listNew cssImg" onclick='chooseImg(${i})' src="${listimg[i]}" alt=""></li>`                                       
+                }
+                document.getElementById('ul').innerHTML=element;
+                document.getElementsByClassName('cssImg')[0].classList.remove('listNew')
+            }
+            renderImages()
+            function chooseImg(adressImg) {
+                document.getElementById('imgMain').src=listimg[adressImg];
+                let arrImg = document.getElementsByClassName('cssImg');
+                for (let i = 0; i < arrImg.length; i++) {
+                    if (i==adressImg) {
+                        arrImg[i].classList.remove('listNew')
+                    }
+                    else{
+                        arrImg[i].classList.add('listNew')
+                    }
+                }
+            }
+            // let arr = [1,2,3,4,5,6,7];
+            // function nextImg() {
+            //     // lần đầu tiên click [2,3,4,5,6,7,1]
+            //     //  lần thứ 2 [3,4,5,6,7,1,2]
+            //     let arr1 = arr.shift(); // dùng shift để xoá phần tử đầu và thu đc phần tử đã xoá là 1
+            //     console.log(arr1);
+            //     arr.push(arr1); // sau khi đã xoá xong thì thu đc arr1 là 1. sau đó push 1 vào arr
+            //     console.log(arr);
+                
+            // }
+            function nextImg() {
+
+            }
+     </script>
+     </body>
+</html>       

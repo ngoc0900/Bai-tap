@@ -1,0 +1,47 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+    display: flex;
+
+}
+div.formhv, div.studentlist {
+    margin: 25px;
+    padding: 10px;
+    border: 1px solid;
+}
+div.formhv {
+    width: 400px;
+}
+div.formfv h2 {
+    padding: 0px;
+    margin-top: 0px;
+}
+td {
+    padding: 5px;
+}
+th {
+    padding: 5px;
+}
+.button {
+    margin-top: 10px;
+    width: 150px;
+}
+.studentlist {
+    width: 750px;
+}
+.list {
+    margin: 25px;
+}
+.heading {
+    margin: 25px;
+}
+div.heading h2 {
+    text-align: center;
+}
+.loi {
+    color: red;
+}
+
+
