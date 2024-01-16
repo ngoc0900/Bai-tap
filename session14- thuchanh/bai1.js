@@ -71,12 +71,6 @@ function luu() {
             address: address,
             gender: gender,
         });
-        stt ++ ;
-        // let trstt = document.getElementsByClassName("stt");
-       
-        // for (let i = 0; i < trstt.length; i++) {
-        //     stt = i + 2;
-        // }
         for (let i = 0; i < students.length; i++) {
             document.getElementById("idlist").innerHTML +=
             `<table id="idlist" class="listhv" >
@@ -92,7 +86,7 @@ function luu() {
                     </td>
                 </tr>
             </table>`
-            
+            stt ++ ;
         }
     }
 }
