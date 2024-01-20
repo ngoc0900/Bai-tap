@@ -93,12 +93,12 @@ function luu() {
 
 function deleteStudent(stt) {
   let listDelete =  document.getElementsByClassName("tr");
-  listDelete[stt-1].remove();
-  let newSTT = document.getElementsByClassName("stt");
-  let id = document.getElementsByClassName("dlt");
-  for ( let i = 0; i < newSTT.length ; i++) {
-    newSTT[i].innerHTML = i + 1;
+//   listDelete[stt-1].remove();
+//   let newSTT = document.getElementsByClassName("stt");
+//   let id = document.getElementsByClassName("dlt");
+//   for ( let i = 0; i < newSTT.length ; i++) {
+//     newSTT[i].innerHTML = i + 1;
 //     // id.onlcick = `deleteStudent(${i+1})`
 //     // id[i].addEventListener("click", deleteStudent(i)) ;
-  }
+//   }
 }
