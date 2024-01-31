@@ -27,7 +27,7 @@ function openCloseDropdown (event) {
 }
 document.addEventListener('DOMContentLoaded', function () {
     //  lấy dữ liệu từ local storage về
-    let users = JSON.parse(localStorage.getItem('mang')) || [];
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
     // tạo element của HTML
     let userList = document.getElementById('userList');
@@ -51,12 +51,26 @@ document.addEventListener('DOMContentLoaded', function () {
     users.forEach(user => {
         let tr = document.createElement('tr');
         // console.log(Object.values(user));
-        Object.values(user).forEach(value => {
+        // lấy hết giá trị trong object user trừ pasword và thẻ card
+        let {password,card, status,...restInfoUser } = user;
+        Object.values(restInfoUser).forEach(value => {
             let td = document.createElement('td');
             td.textContent = value;
             tr.appendChild(td);
         });
         tbody.appendChild(tr);
+        // nếu là status thì thêm toggle button
+        // <div class="form-check form-switch">
+        //     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        //     <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+        // </div>
+        let input = document.createElement('input');
+        input.type= "checkbox";
+        input.checked =user['status'];
+        let td2 = document.createElement('td');
+        td2.appendChild(input);
+        tr.appendChild(td2);
+
     });
 
     table.appendChild(thead);

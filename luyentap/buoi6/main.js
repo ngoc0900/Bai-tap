@@ -9,13 +9,14 @@ function isValidEmail(email) {
 function isPhone(phone) {
     return /^\d{10}$/.test(phone);
 }
-function resetForm(){document.getElementById("group").value =
+function resetForm(){
+    document.getElementById("group").value ="";
     document.getElementById("fullname").value = "";
     document.getElementById("mail").value = "";
     document.getElementById("telnumber").value = "";
     document.getElementById("marks").value ="";
     document.getElementById("nangluc").value= "";
-    "";
+    
     let genders = document.getElementsByClassName("gender");
             for (let i = 0; i < genders.length; i++) {
                 genders[i].checked = false

@@ -3,59 +3,89 @@ document.addEventListener('DOMContentLoaded', function () {
     let prevPageButton = document.getElementById('prevPage');
     let nextPageButton = document.getElementById('nextPage');
     let currentPageSpan = document.getElementById('currentPage');
-    
+
     let currentPage = 1;
     let ordersPerPage = 10; // 1ページあたりのオーダー数
-    // let pages = Math.ceil(orders.length / ordersPerPage)
-    // for (let i = 0; i < pages; i++) {
-    //     html +=
-    //         `
-    //              <li>
-    //                 <button onclick=choosePage(${i})>${i+1}</button>
-    //             </li> 
-    //         `
-    // }
-    // let page = document.get
 
-    
-    let orders = JSON.parse(localStorage.getItem('products')) || []; // ローカルストレージからオーダーを取得
+    let categories = JSON.parse(localStorage.getItem('categories')) || []; // ローカルストレージからオーダーを取得
+    let allProducts = [];
+
+    for (let i = 0; i < categories.length; i++) {
+        for (let j = 0; j < categories[i].products.length; j++) {
+            allProducts.push(categories[i].products[j]);
+        }
+    }   
+
+
+    function searchProducts(query) {
+       
+        if(query) {
+            // 検索クエリに基づいて商品をフィルタリング
+        allProducts = allProducts.filter(product => product.productName.toLowerCase().includes(query.toLowerCase()));
+        console.log(query);
+        } 
+        updateTable();
+    }
+
+        // イベントリスナー: 検索バーでの入力を処理
+        document.getElementById('search').addEventListener('input', function(event) {
+            
+            if(event.target.value.trim()) {
+                searchProducts(event.target.value.trim());
+            } else {
+                allProducts = [];
+                for (let i = 0; i < categories.length; i++) {
+                    for (let j = 0; j < categories[i].products.length; j++) {
+                        allProducts.push(categories[i].products[j]);
+                    }
+                }   
+                updateTable();
+                
+            }
+         });
+
 
     function updateTable() {
         ordersTable.innerHTML = ''; // テーブルをクリア
-        let pageOrders = orders.slice((currentPage - 1) * ordersPerPage, currentPage * ordersPerPage);
-        
+        let pageOrders = allProducts.slice((currentPage - 1) * ordersPerPage, currentPage * ordersPerPage);
+
         // テーブルにオーダーを追加
-        
-        pageOrders.forEach((order, index) => {
-            let row = ordersTable.insertRow(index);
-            row.insertCell(0).innerText = order.id;
-            row.insertCell(1).innerText = order.productName;
-            row.insertCell(2).innerText = order.status;
-            row.insertCell(3).innerText = order.category;
-            row.insertCell(4).innerText = order.price;
-            row.insertCell(5).innerText = order.date;
-            
+        pageOrders.forEach((product, index) => {
+                let row = ordersTable.insertRow(index);
+                row.insertCell(0).innerText = index + 1;
+                row.insertCell(1).innerText = product.productName;
+                row.insertCell(2).innerText = product.status;
+                row.insertCell(3).innerText = getCategoryName(product.categoryId);
+                row.insertCell(4).innerText = product.price;
+                row.insertCell(5).innerText = product.date;
 
-            let actionCell = row.insertCell(6);
-            let updateButton = document.createElement('button');
-            updateButton.innerText = 'Edit';
-            updateButton.addEventListener('click', function() {
-                window.location.href="add_Product.html";
-                
-                updateOrderStatus(order.id);
+
+                let actionCell = row.insertCell(6);
+                let updateButton = document.createElement('button');
+                updateButton.innerText = 'Edit';
+                updateButton.addEventListener('click', function () {
+                    window.location.href = "add_Product.html";
+
+                    updateOrderStatus(product.id);
+                });
+                actionCell.appendChild(updateButton);
+
+                let deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.addEventListener('click', function () {
+                    deleteProduct(product.id, product.categoryId);
+                });
+                actionCell.appendChild(deleteButton);
             });
-            actionCell.appendChild(updateButton);
 
-            let deleteButton = document.createElement('button');
-            deleteButton.innerText = 'Delete';
-            deleteButton.addEventListener('click', function() {
-                deleteOrder(order.id);
-            });
-            actionCell.appendChild(deleteButton);
-        });
-
-        currentPageSpan.innerText = currentPage;
+            currentPageSpan.innerText = currentPage;
     }
+
+    // Lấy category name theo id
+    function getCategoryName(categoryId) {
+       return categories.filter((category) => category.id == categoryId)[0].categoryName;
+    }
+
     let idEdit1 = -1;
     function updateOrderStatus(orderId) {
         // ステータス更新処理
@@ -66,29 +96,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 idEdit1 = productInfo.id;
                 break;
             }
-        console.log(`Updating status for order ${orderId}`);
-        // ここにステータス更新のロジックを実装
-        
+            console.log(`Updating status for order ${orderId}`);
+            // ここにステータス更新のロジックを実装
+
         }
-        
+
     }
 
-    function deleteOrder(orderId) {
+    function deleteProduct(productId,categoryId) {
+        for(let i = 0; i < categories.length; i++) {
+            // Tìm category hiện tại của sp muốn xóa
+            if(categories[i].id == categoryId) {
+                for(let j = 0; j < categories[i].products.length; j++) {
+
+                    // Xoa product trong mảng product
+                    if(categories[i].products[j].id == productId) {
+                        categories[i].products.splice(j,1);
+                    }
+                }
+            }
+        }
+        localStorage.setItem("categories",JSON.stringify(categories));
         // オーダー削除処理
-        console.log(`Deleting order ${orderId}`);
-        orders = orders.filter(order => order.id !== orderId);
-        updateTable();
+        console.log(`Deleting order ${productId}`);
+        location.reload()
     }
 
     // ページネーションの処理
-    prevPageButton.addEventListener('click', function() {
+    prevPageButton.addEventListener('click', function () {
         if (currentPage > 1) {
             currentPage--;
             updateTable();
         }
     });
-    nextPageButton.addEventListener('click', function() {
-        if ((currentPage * ordersPerPage) < orders.length) {
+    nextPageButton.addEventListener('click', function () {
+        if ((currentPage * ordersPerPage) < allProducts.length) {
             currentPage++;
             updateTable();
         }
@@ -96,3 +138,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateTable();
 });
+
+// function timKiem() {
+//     let mang = [];
+//     let tk = document.getElementById("search").value;
+//     for( let i = 0; i < categories.length ; i++) {
+
+//         if(categories[i].productName.toLowerCase().includes(tk.toLowerCase())) {
+//             mang.push(categories[i]);
+//         }
+//     }
+//     updateTable(mang);
+// }
+
+// 検索機能
+
+  
+  
