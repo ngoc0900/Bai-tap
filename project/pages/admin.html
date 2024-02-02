@@ -24,12 +24,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <img src="../asset/Butterfly (1).png" alt="logo ảnh Tama Chan" class="logo">
+                <img src="../asset/coollogo_com-3878828.png" alt="logo ảnh Tama Chan" class="logo">
             </li>
         </ul>
         <form class="navbar-search">
-            <input type="text" name="search" class="navbar-search-input" placeholder="Tìm kiếm...">
-            <i class="fas fa-search"></i>
+            <input type="text" name="search" class="navbar-search-input" placeholder="Tìm kiếm..." id="search">
+            <i class="fas fa-search" onclick="timKiem()"></i>
         </form>
         <ul class="navbar-nav nav-right">
             <li class="nav-item dropdown ">
@@ -65,7 +65,7 @@
                             </li>
                             <li class="dropdown-menu-item">
                                 <a href="#" class="dropdown-menu-link">
-                                    <div > 
+                                    <div>
                                         <i class="fas fa-gift"></i>
                                     </div>
                                     <span>Lorem ipsum, dolor sitit in officia dicta distinctios cumque voluptremque!<br>
@@ -78,6 +78,9 @@
                                     Tất cả thông báo
                                 </span>
                             </div>
+                        </div>
+                    </div>
+
                 </ul>
             </li>
             <li class="nav-item">
@@ -115,7 +118,7 @@
     </div>
     <!-- end navbar -->
     <!-- sidebar -->
-    <div class="sidebar" onmouseover = "collapeSidebar ()">
+    <div class="sidebar" onmouseover="collapeSidebar ()">
         <ul class="sidebar-nav">
             <li class="sidebar-nav-item">
                 <a href="../pages/admin.html" class="sidebar-nav-link">
@@ -148,23 +151,30 @@
     <!-- main content -->
     <div class="wrapper">
         <div id="userList"></div>
-        <!-- <table border = "1" class="content1">
-            <tr>
-                <th>ID</th>
-                <th>Tên đăng nhập</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Date</th>
-                <th>Action</th>
-            </tr>
-        </table> -->
-        <div>
-            
+        <table class="content1" id="ordersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Ngày</th>
+                    <th>Hoạt động</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table><br><br>
+        <div id="pagination">
+            <button id="prevPage">Trước</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage">Sau</button>
         </div>
     </div>
     <!-- end main content -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="../js/admin.js"></script>
+    <script src="../js/admin1.js"></script>
     <script src="../js/common.js"></script>
     <script src="../../session17-Bootstrap/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 </body>

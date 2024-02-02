@@ -28,10 +28,10 @@ function openCloseDropdown (event) {
 document.addEventListener('DOMContentLoaded', function () {
     //  lấy dữ liệu từ local storage về
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
+    
     // tạo element của HTML
     let userList = document.getElementById('userList');
-    let table = document.createElement('table'); // tạo một ccais elemrnt table
+    let table = document.createElement('table'); // tạo một cái element table
     table.classList.add('table-users');
 
     let thead = document.createElement('thead');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     users.forEach(user => {
         let tr = document.createElement('tr');
         // console.log(Object.values(user));
-        // lấy hết giá trị trong object user trừ pasword và thẻ card
+        // lấy hết giá trị trong object user trừ pasword và thẻ card, trạng thái
         let {password,card, status,...restInfoUser } = user;
         Object.values(restInfoUser).forEach(value => {
             let td = document.createElement('td');
@@ -76,4 +76,5 @@ document.addEventListener('DOMContentLoaded', function () {
     table.appendChild(thead);
     table.appendChild(tbody);
     userList.appendChild(table);
+
 });

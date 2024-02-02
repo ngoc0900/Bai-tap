@@ -8,6 +8,9 @@
     text-decoration: none;
     color: white;
 }
+.mymainmenu {
+	position: relative;
+}
 
 img:hover {
     transform: scale(1.1);
@@ -44,6 +47,13 @@ img:hover {
 	min-width: 380px;
 }
 
+.user-menu {
+	position: absolute;
+}
+
+.fa-circle-user {
+	color: #0d6efd !important;
+}
 .dropdown-menu-content {
 	max-height: 500px;
 	overflow-y: auto;
@@ -61,13 +71,6 @@ img:hover {
 	color: var(--main-color);
 }
 
-.dropdown-menu-link {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	text-decoration: none;
-	color: var(--main-color);
-}
 
 .dropdown-menu-link div {
 	min-width: 82px;
@@ -101,8 +104,57 @@ img:hover {
 	background: var(--second-bg-color);
 }
 
+.sua {
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	right: 10%;
+	background: white;
+	max-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1000;
+	padding: unset;
+	border-radius: 10px;
+	border: 0.125px solid var(--second-bg-color);
+	
+}
+
+
 .img {
 	width: 75%;
 	height: 75%;
+}
+
+.col-9 a {
+	text-decoration: none;
+}
+
+.mua {
+	background-color: red;
+	color: white;
+	border: none;
+}
+
+@media (min-width: 1025px) {
+	.h-custom {
+	height: 100vh !important;
+	}
+	}
+
+.input-group {
+	position: relative;
+}
+
+.form-control {
+	background: #f1f1f1;
+	border: none;
+	outline: none;
+}	
+
+.input-group-text  {
+	background: #f1f1f1 ;
+	border: none !important;
+	outline: none !important;
+
 }
 

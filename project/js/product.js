@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentPageSpan = document.getElementById('currentPage');
 
     let currentPage = 1;
-    let ordersPerPage = 10; // 1ページあたりのオーダー数
+    let ordersPerPage = 10; // Số lượng đơn đặt hàng trên mỗi trang
 
-    let categories = JSON.parse(localStorage.getItem('categories')) || []; // ローカルストレージからオーダーを取得
+    let categories = JSON.parse(localStorage.getItem('categories')) || []; // lấy categoris từ localStorage
     let allProducts = [];
 
     for (let i = 0; i < categories.length; i++) {
@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }   
 
-
+    
     function searchProducts(query) {
-       
+        let initAllProducts = allProducts;
         if(query) {
-            // 検索クエリに基づいて商品をフィルタリング
+            // Lọc sản phẩm dựa trên truy vấn tìm kiếm
         allProducts = allProducts.filter(product => product.productName.toLowerCase().includes(query.toLowerCase()));
         console.log(query);
         } 
         updateTable();
+        allProducts = initAllProducts;
     }
 
-        // イベントリスナー: 検索バーでの入力を処理
         document.getElementById('search').addEventListener('input', function(event) {
             
             if(event.target.value.trim()) {
@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updateTable() {
-        ordersTable.innerHTML = ''; // テーブルをクリア
+        ordersTable.innerHTML = ''; 
         let pageOrders = allProducts.slice((currentPage - 1) * ordersPerPage, currentPage * ordersPerPage);
 
-        // テーブルにオーダーを追加
+        // Thêm đơn hàng vào bảnge
         pageOrders.forEach((product, index) => {
                 let row = ordersTable.insertRow(index);
                 row.insertCell(0).innerText = index + 1;
@@ -86,22 +86,20 @@ document.addEventListener('DOMContentLoaded', function () {
        return categories.filter((category) => category.id == categoryId)[0].categoryName;
     }
 
-    let idEdit1 = -1;
-    function updateOrderStatus(orderId) {
-        // ステータス更新処理
-        let productInfo;
-        for (let i = 0; i < orders.length; i++) {
-            if (orders[i].id == orderId) {
-                productInfo = orders[i];
-                idEdit1 = productInfo.id;
-                break;
-            }
-            console.log(`Updating status for order ${orderId}`);
-            // ここにステータス更新のロジックを実装
+    // let idEdit1 = -1;
+    // function updateOrderStatus(orderId) {
+    //     let productInfo;
+    //     for (let i = 0; i < categories.length; i++) {
+    //          if(categories[i].id == categoryId) {
+    //             productInfo = categories[i];
+    //             idEdit1 = productInfo.id;
+    //             break;
+    //         }
+    //         console.log(` Sửa sản phẩm ${orderId}`);
+            
+    //     }
 
-        }
-
-    }
+    // }
 
     function deleteProduct(productId,categoryId) {
         for(let i = 0; i < categories.length; i++) {
@@ -117,12 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         localStorage.setItem("categories",JSON.stringify(categories));
-        // オーダー削除処理
-        console.log(`Deleting order ${productId}`);
+        // xoá sản phẩm
+        console.log(`Xoá sản phẩm ${productId}`);
         location.reload()
     }
 
-    // ページネーションの処理
+    // Xử lý phân trang
     prevPageButton.addEventListener('click', function () {
         if (currentPage > 1) {
             currentPage--;
@@ -139,19 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateTable();
 });
 
-// function timKiem() {
-//     let mang = [];
-//     let tk = document.getElementById("search").value;
-//     for( let i = 0; i < categories.length ; i++) {
 
-//         if(categories[i].productName.toLowerCase().includes(tk.toLowerCase())) {
-//             mang.push(categories[i]);
-//         }
-//     }
-//     updateTable(mang);
-// }
-
-// 検索機能
 
   
   

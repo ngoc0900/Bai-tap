@@ -48,6 +48,7 @@ function singup(e) {
     }
 
     if (!hasError) {
+
         let user = {
             id: usersId(),
             name: name,
@@ -55,7 +56,7 @@ function singup(e) {
             role: "User",
             date: date,
             status: true,
-            card: [],
+            cart: [],
             password: password,
         };
         users.push(user);
@@ -75,10 +76,14 @@ function login(e) {
     for (let i = 0; i < users.length; i++) {
         if (users[i].email === email && users[i].password === password) {
             login = true;
+            localStorage.setItem('user',JSON.stringify(users[i]));
             window.location.href = "../index.html"
         }
     } 
     if (!login) {
         alert("email hay mật khẩu không chính xác")
     }
+
+    
 }
+

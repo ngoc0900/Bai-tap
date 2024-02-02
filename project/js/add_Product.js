@@ -56,6 +56,7 @@ function saveProduct(base64Image) {
         image: base64Image || document.getElementById('image').value,
         categoryId: categoryChooseId,
         date: date,
+        description: document.getElementById('description').value,
     };
 
     for (let i = 0; i < categories.length; i++) {
